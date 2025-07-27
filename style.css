@@ -1,0 +1,539 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+  }
+
+
+.navbar{
+    background-color: #0d6fcb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px 10px;
+    border-radius: 3px;
+}
+
+.navbar a:hover{
+    background-color: #0d6fcb;
+}
+
+.search-input {
+    padding: 6px 12px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease;
+    width: 160px;
+  }
+
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    font: 16px;
+}
+
+.logo img{
+    height: 50px;
+}
+
+
+.slider {
+    position: relative;
+    height: 600px;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider img.active{
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 40px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.arrow:hover{
+    background-color: rgba(0,0,0,0.6);
+}
+
+.arrow-kanan{
+    right:20px;
+}
+
+.arrow-kiri{
+    left: 20px;
+}
+
+
+.program-studi {
+    padding: 40px 30px;
+    background-color: white;
+}
+
+.program-studi h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.link-program{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.container-program {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+
+.card-program {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: white;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1400px) {
+    .card-program{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.card-program:hover {
+    transform: translateY(-10px);
+}
+
+.label-program {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background-color: rgba(171, 12, 12, 0.85);
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#label-sarjana{
+    background-color: #0d6fcb;
+}
+#label-magister{
+    background-color: rgb(18, 185, 62);
+}
+
+.overlay-program {
+    position: absolute;
+    bottom: 40px;
+    left: -10px;
+    right: 10px;
+    background-color: rgba(171, 12, 12, 0.85);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+#overlay-sarjana{
+    background-color: #0d6fcb;  
+}
+#overlay-magister{
+    background-color: rgb(18, 185, 62);
+}
+
+.overlay-program:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+.program-text {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.program-arrow {
+    font-size: 26px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+
+.berita h2{
+    padding-left:40px;
+    background-color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+.link-berita{
+    text-decoration: none;
+}
+.container-berita{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    max-width: 700px;
+    margin: auto;
+    padding: 40px;
+}
+.card-berita {
+    display: flex;
+    gap: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    padding: 20px;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    min-height: 50px;
+    min-width: 600px;
+    transition: transform 0.3s ease;
+}
+
+.card-berita:hover{
+    transform: translateY(-10px);
+}
+  
+.gambar-berita img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+  
+.konten-berita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.judul-berita h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+  
+.isi-berita {
+    font-size: 14px;
+    color: #555;
+}
+  
+.tanggal-berita {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    min-width: 60px;
+    font-size: 12px;
+}
+.tanggal-berita .hari {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.kaki{
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.kaki div{
+    display: flex;
+    gap: 400px;
+    color: #5c5c5c;
+}
+.kaki h1 {
+    color: #5c5c5c;
+}
+
+/* lokasi */
+.lokasi-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px; 
+}
+
+.lokasi-section iframe {
+    margin-top: 20px;
+}
+
+.bagian-kontak {
+    padding: 60px 30px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.container-kontak {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card-kontak {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 190px;
+    transition: transform 0.3s ease;
+    text-align: center
+}
+
+.card-kontak:hover{
+    transform: translateY(-10px);
+}
+
+.card-kontak .logo {
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+.konten-card p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000;
+}
+
+.tombol-kontak{
+    margin-top: 30px ;
+    display: inline-block;
+    background-color: #0d6fcb;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.tombol-kontak:hover {
+    background-color: #0d6fcb;
+}
+
+.galeri{
+    padding: 40px 30px;
+    background-color: white;
+}
+.galeri h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+.bagian-galeri{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card-galeri {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.card-galeri:hover {
+    transform: translateY(-10px);
+}
+
+.tentang {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.tentang h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #0d6fcb;
+  margin-bottom: 20px;
+}
+
+.tentang h3 {
+  margin-top: 30px;
+  color: #0d6fcb;
+  font-size: 1.2em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.tentang p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.tentang ul, 
+.tentang ol {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+.tentang li {
+  margin-bottom: 8px;
+}
+
+
+.tentang table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.tentang table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.tentang table td:first-child {
+  font-weight: bold;
+  width: 35%;
+  color: #333;
+}
+
+.tentang table td:last-child {
+  width: 65%;
+}
+
+
+@media (max-width: 600px) {
+  .tentang {
+    padding: 15px 20px;
+  }
+
+  .tentang h1 {
+    font-size: 1.5em;
+  }
+
+  .tentang h3 {
+    font-size: 1.1em;
+  }
+
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.moto {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.section {
+    background: #f6f6f6;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.section ol,
+.section ul {
+    padding-left: 20px;
+}
+
+.section h4,
+.section h5 {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #eaeaea;
+}
+}
